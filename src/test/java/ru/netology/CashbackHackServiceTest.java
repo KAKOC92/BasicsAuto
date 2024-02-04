@@ -1,9 +1,20 @@
 package ru.netology;
 
 import junit.framework.TestCase;
+import org.junit.Test;
 
-public class CashbackHackServiceTest extends TestCase {
+import static org.junit.Assert.assertEquals;
 
-    public void testRemain() {
+public class CashbackHackServiceTest  {
+    @Test
+
+    public void shouldAdvice100IfBuy900() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        int amount = 900;
+
+        int actual = cashbackHackService.remain(amount);
+        int expected = 100;
+
+        assertEquals(expected, actual);
     }
 }
